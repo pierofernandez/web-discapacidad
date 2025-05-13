@@ -6,9 +6,9 @@ export const Footer = () => {
                 <div className="xl:grid xl:grid-cols-3 xl:gap-8">
                     <div className="space-y-8">
                         <img
-                            className="h-20"
-                            src="https://aaah0mnbncqtinas.public.blob.vercel-storage.com/FX5ATkass4-no-background-VmcZHSX7xE4ng29ATNphGUdb388fxH.png"
-                            alt="Company name"
+                            className="h-20 w-20"
+                            src="img/logoupn.png"
+                            alt="logo upn"
                         />
                         <p className="text-sm leading-6 text-gray-600">
                             Making football look better to the world and a more respectful game.
