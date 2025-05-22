@@ -28,7 +28,7 @@ export const HomePage = () => {
             <div className="relative w-full">
                 {/* Fondo en la mitad superior */}
                 <div className="absolute w-full h-5/6">
-                    <div className="w-full h-full bg-[url('img/fondo.png')] bg-cover bg-center bg-no-repeat"></div>
+                    <div className="w-full h-full bg-[url('/img/fondo.png')] bg-cover bg-center bg-no-repeat"></div>
                 </div>
 
                 {/* Contenido encima del fondo */}
