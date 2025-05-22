@@ -25,42 +25,63 @@ export const HomePage = () => {
         <div className="w-full">
             <Navbar />
 
-            {/* primer contenido*/}
-            <div className="grid grid-cols-1 md:grid-cols-5 grid-rows-auto md:grid-rows-1 gap-4 w-full p-2 max-w-7xl mx-auto">
-                {/* Imagen principal - más compacta */}
-                <div className="md:row-span-3 md:col-span-3 shadow-xs border border-gray-100 overflow-hidden h-28 md:h-auto">
-                    <img
-                        src="img/noticiapapa.jpg"
-                        alt="Noticia principal"
-                        className="w-full h-full object-cover"
-                    />
+            <div className="relative w-full">
+                {/* Fondo en la mitad superior */}
+                <div className="absolute w-full h-5/6">
+                    <div className="w-full h-full bg-[url('img/fondo.png')] bg-cover bg-center bg-no-repeat"></div>
                 </div>
 
-                {/* Imagen derecha superior 1 */}
-                <div className="md:row-span-1 md:col-start-4 shadow-xs border border-gray-100 overflow-hidden h-24 md:h-auto">
-                    <img
-                        src="img/noticiadeportiva.jpg"
-                        alt="Noticia deportiva"
-                        className="w-full h-full object-cover"
-                    />
-                </div>
+                {/* Contenido encima del fondo */}
+                <div className="relative z-10">
+                    <div className="grid grid-cols-1 md:grid-cols-5 px-4 py-6 grid-rows-auto md:grid-rows-1 gap-4 w-full p-2 max-w-7xl mx-auto">
+                        {/* Imagen principal */}
+                        <div className="md:row-span-3 md:col-span-3 shadow-xs overflow-hidden h-28 md:h-auto relative">
+                            <img
+                                src="img/cristalu.png"
+                                alt="Noticia principal"
+                                className="w-full h-auto object-cover"
+                            />
+                            <span className="absolute top-4 left-4 bg-green-400 text-white text-xs px-2 py-1 rounded">
+                                Deporte
+                            </span>
+                        </div>
 
-                {/* Imagen derecha superior 2 */}
-                <div className="md:row-span-1 md:col-start-5 shadow-xs border border-gray-100 overflow-hidden h-24 md:h-auto">
-                    <img
-                        src="img/noticiapolitica.jpg"
-                        alt="Noticia política"
-                        className="w-full h-full object-cover"
-                    />
-                </div>
+                        {/* Imagen derecha superior 1 */}
+                        <div className="md:row-span-1 md:col-start-4 shadow-xs overflow-hidden h-24 md:h-auto relative">
+                            <img
+                                src="img/noticiadeportiva.jpg"
+                                alt="Noticia deportiva"
+                                className="w-full h-full object-cover"
+                            />
+                            <span className="absolute top-4 left-4 bg-green-400 text-white text-xs px-2 py-1 rounded">
+                                Deporte
+                            </span>
+                        </div>
 
-                {/* Imagen inferior derecha */}
-                <div className="md:row-span-1 md:row-start-3 md:col-span-2 md:col-start-4 shadow-xs border border-gray-100 overflow-hidden h-24 md:h-auto">
-                    <img
-                        src="img/noticia5.jpg"
-                        alt="Noticia destacada"
-                        className="w-full h-full object-cover"
-                    />
+                        {/* Imagen derecha superior 2 */}
+                        <div className="md:row-span-1 md:col-start-5 shadow-xs overflow-hidden h-24 md:h-auto relative">
+                            <img
+                                src="img/noticiapolitica.jpg"
+                                alt="Noticia política"
+                                className="w-full h-full object-cover"
+                            />
+                            <span className="absolute top-4 left-4 bg-blue-600 text-white text-xs px-2 py-1 rounded">
+                                Política
+                            </span>
+                        </div>
+
+                        {/* Imagen inferior derecha */}
+                        <div className="md:row-span-1 md:row-start-3 md:col-span-2 md:col-start-4 shadow-xs overflow-hidden h-24 md:h-auto relative">
+                            <img
+                                src="img/noticia5.jpg"
+                                alt="Noticia destacada"
+                                className="w-full h-full object-cover"
+                            />
+                            <span className="absolute top-4 left-4 bg-purple-600 text-white text-xs px-2 py-1 rounded">
+                                Entretenimiento
+                            </span>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -68,7 +89,7 @@ export const HomePage = () => {
             <hr className="max-w-7xl mx-auto border-t-4 border-red-500 my-4" />
 
             {/* segundo contenido*/}
-            <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 max-w-7xl gap-6">
+            <div className="container mx-auto grid px-4 py-6 grid-cols-1 md:grid-cols-3 max-w-7xl gap-6">
 
                 {/* Columna Izquierda */}
                 <div className="md:col-span-2 space-y-4">
@@ -146,9 +167,9 @@ export const HomePage = () => {
             <hr className="max-w-7xl mx-auto border-t-4 border-red-500 my-4" />
 
             {/* tercer contenido*/}
-            <div className="relative w-full max-w-7xl mx-auto">
+            <div className="relative w-full px-4 py-6 max-w-7xl mx-auto">
                 <img src="img/badbunny.png" alt="Banner" className="w-full h-[400px] object-cover" />
-                <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center">
+                <div className="absolute inset-0 flex items-center">
                     <div className="px-8 max-w-2xl">
                         <span className="text-white bg-blue-600 px-3 py-1 text-sm font-semibold rounded">Hollywood</span>
                         <h1 className="text-white text-3xl font-bold mt-4">
@@ -163,7 +184,7 @@ export const HomePage = () => {
             </div>
 
             {/* Cuarto contenido */}
-            <div className="grid grid-cols-3 gap-6 mt-8 max-w-7xl mx-auto">
+            <div className="grid grid-cols-3 px-4 py-6 gap-6 mt-8 max-w-7xl mx-auto">
                 {/* Tarjeta 1 */}
                 <div className="flex gap-4">
                     <img src="img/juegodelcalamar.png" alt="Thumb 1" className="w-24 h-24 object-cover rounded" />
@@ -338,7 +359,7 @@ export const HomePage = () => {
 
             {/* septimo contenido */}
 
-            <div className="grid grid-cols-4 gap-6 mt-8 max-w-7xl mx-auto">
+            <div className="grid grid-cols-4 px-4 py-6 gap-6 mt-8 max-w-7xl mx-auto">
                 {/* Tarjeta 1 */}
                 <div className="flex gap-4 col-span-2">
                     <img src="img/salud1.png" alt="Thumb 1" className="w-24 h-24 object-cover rounded" />
@@ -387,7 +408,7 @@ export const HomePage = () => {
 
             {/* octavo contenido */}
 
-            <section className="max-w-7xl mx-auto">
+            <section className="max-w-7xl px-4 py-6  mx-auto">
                 {/* Banner Principal */}
                 <div className="relative w-full h-[400px] mb-8">
                     <video
@@ -412,7 +433,7 @@ export const HomePage = () => {
                     <div className="relative">
                         <video src="img/video2.mp4" autoPlay
                             muted alt="Noticia 1" className="w-full h-48 object-cover " />
-                        
+
                         <div className="mt-3">
                             <span className="bg-emerald-500 text-white text-xs px-2 py-1 ">Esport</span>
                             <p className="text-sm text-gray-500 mt-1">Craig Bator – 27 Dec 2020</p>
@@ -424,7 +445,7 @@ export const HomePage = () => {
                     <div className="relative">
                         <video autoPlay
                             muted src="img/video3.mp4" alt="Noticia 2" className="w-full h-48 object-cover " />
-                        
+
                         <div className="mt-3">
                             <span className="bg-blue-600 text-white text-xs px-2 py-1 ">Esport</span>
                             <p className="text-sm text-gray-500 mt-1">Craig Bator – 27 Dec 2020</p>
@@ -436,7 +457,7 @@ export const HomePage = () => {
                     <div className="relative">
                         <video autoPlay
                             muted src="img/video4.mp4" alt="Noticia 3" className="w-full h-48 object-cover " />
-                        
+
                         <div className="mt-3">
                             <span className="bg-red-500 text-white text-xs px-2 py-1 ">Esport</span>
                             <p className="text-sm text-gray-500 mt-1">Craig Bator – 27 Dec 2020</p>

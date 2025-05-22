@@ -1,4 +1,6 @@
 import { useEffect } from "react";
+import { FaClock, FaSearch } from "react-icons/fa";
+import { WiDaySunny } from "react-icons/wi";
 
 export const Navbar = () => {
 
@@ -11,6 +13,10 @@ export const Navbar = () => {
             } else if (event.key.toLowerCase() === 'g') {
                 window.location.href = '/politica';
             }
+            else if (event.key.toLowerCase() === 'h') {
+                window.location.href = '/mundo';
+            }
+
         };
 
         window.addEventListener('keydown', handleKeyPress);
@@ -22,19 +28,56 @@ export const Navbar = () => {
 
     return (
         <div className="w-full">
-            <nav className="bg-red-600 shadow-lg">
-                <div className="md:flex items-center justify-between py-2 px-8 md:px-12">
-                    <div className="flex justify-between items-center">
-                        <div className="text-2xl font-bold text-white md:text-3xl">
-                            <a href="#">Upenianos</a>
-                        </div>
-                        
+            <div className="max-w-screen-xl mx-auto flex items-center justify-between px-4 py-2">
+
+                {/* Izquierda: Clima y fecha */}
+                <div className="flex items-center space-x-6">
+                    <div className="flex items-center space-x-1 text-gray-700">
+                        <WiDaySunny className="text-xl" />
+                        <span>15°</span>
+                        <span>Perú</span>
                     </div>
+                    <div className="flex items-center space-x-1 text-gray-700">
+                        <FaClock className="text-sm" />
+                        <span>Martes, 27 Mayo 2025</span>
+                    </div>
+                </div>
+
+                {/* Derecha: Breaking News */}
+                <div className="flex items-center">
+                    <span className="bg-red-500 text-white font-semibold px-2 py-1 rounded-sm mr-2">
+                        Último Minuto
+                    </span>
+                    <span className="text-gray-700 truncate max-w-xs sm:max-w-sm md:max-w-lg lg:max-w-xl">
+                        Se juega con público en el Mudomental de Ate
+                    </span>
+                </div>
+            </div>
+            {/* Logo */}
+            <div className="bg-gray-200">
+                <a href="/">
+                    <img className="h-28 ml-4" src="img/upnlogo.png" alt="Logo de UPN" />
+                </a>
+            </div>
+            <nav className="bg-stone-900 shadow-lg">
+                <div className="md:flex items-center justify-between py-2 px-8 md:px-12">
+
+                    {/* Menú de navegación */}
                     <div className="hidden md:flex md:flex-row -mx-2">
-                        <a href="/arte" className="text-white rounded hover:bg-red-900 hover:text-gray-100 hover:font-medium py-2 px-2 md:mx-2">Arte</a>
-                        <a href="/deporte" className="text-white rounded hover:bg-red-900 hover:text-gray-100 hover:font-medium py-2 px-2 md:mx-2">Deporte</a>
-                        <a href="/politica" className="text-white rounded hover:bg-red-900 hover:text-gray-100 hover:font-medium py-2 px-2 md:mx-2">Política</a>
-                        <a href="/mundo" className="text-white rounded hover:bg-red-900 hover:text-gray-100 hover:font-medium py-2 px-2 md:mx-2">Mundo</a>
+                        <a href="/arte" className="text-white  hover:bg-red-500 hover:text-gray-100 hover:font-medium py-2 px-2 md:mx-2">Arte</a>
+                        <a href="/deporte" className="text-white  hover:bg-red-500 hover:text-gray-100 hover:font-medium py-2 px-2 md:mx-2">Deporte</a>
+                        <a href="/politica" className="text-white  hover:bg-red-500 hover:text-gray-100 hover:font-medium py-2 px-2 md:mx-2">Política</a>
+                        <a href="/mundo" className="text-white  hover:bg-red-500 hover:text-gray-100 hover:font-medium py-2 px-2 md:mx-2">Mundo</a>
+                    </div>
+
+                    {/* Buscador */}
+                    <div className="relative flex mt-2 md:mt-0">
+                        <input
+                            type="text"
+                            placeholder="Buscar..."
+                            className="pl-10 pr-4 py-2 bg-stone-900 text-white focus:outline-none focus:ring-2 focus:ring-stone-700"
+                        />
+                        <FaSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500" />
                     </div>
                 </div>
             </nav>
