@@ -14,7 +14,7 @@ export const Navbar = () => {
                 window.location.href = '/politica';
             }
             else if (event.key.toLowerCase() === 'h') {
-                window.location.href = '/mundo';
+                window.location.href = '/entretenimiento';
             }
 
         };
@@ -54,7 +54,7 @@ export const Navbar = () => {
                 </div>
             </div>
             {/* Logo */}
-            <div className="bg-gray-200">
+            <div className="bg-amber-400">
                 <a href="/">
                     <img className="h-28 ml-4" src="img/upnlogo.png" alt="Logo de UPN" />
                 </a>
@@ -63,12 +63,15 @@ export const Navbar = () => {
                 <div className="md:flex items-center justify-between py-2 px-8 md:px-12">
 
                     {/* Menú de navegación */}
-                    <div className="hidden md:flex md:flex-row -mx-2">
-                        <a href="/arte" className="text-white  hover:bg-red-500 hover:text-gray-100 hover:font-medium py-2 px-2 md:mx-2">Arte</a>
-                        <a href="/deporte" className="text-white  hover:bg-red-500 hover:text-gray-100 hover:font-medium py-2 px-2 md:mx-2">Deporte</a>
-                        <a href="/politica" className="text-white  hover:bg-red-500 hover:text-gray-100 hover:font-medium py-2 px-2 md:mx-2">Política</a>
-                        <a href="/mundo" className="text-white  hover:bg-red-500 hover:text-gray-100 hover:font-medium py-2 px-2 md:mx-2">Mundo</a>
+                    <div className="hidden md:flex md:flex-row">
+                        <a href="/" className="text-white hover:bg-red-500 hover:text-gray-100 hover:font-medium py-2 px-4 md:mx-2">Home</a>
+                        <a href="/arte" className="text-white hover:bg-red-500 hover:text-gray-100 hover:font-medium py-2 px-4 md:mx-2">Arte y Cultura</a>
+                        <a href="/deporte" className="text-white hover:bg-red-500 hover:text-gray-100 hover:font-medium py-2 px-4 md:mx-2">Deporte</a>
+                        <a href="/politica" className="text-white hover:bg-red-500 hover:text-gray-100 hover:font-medium py-2 px-4 md:mx-2">Política</a>
+                        <a href="/entretenimiento" className="text-white hover:bg-red-500 hover:text-gray-100 hover:font-medium py-2 px-4 md:mx-2">Entretenimiento</a>
+                        <a href="/contacto" className="text-white hover:bg-red-500 hover:text-gray-100 hover:font-medium py-2 px-4 md:mx-2">Contacto</a>
                     </div>
+
 
                     {/* Buscador */}
                     <div className="relative flex mt-2 md:mt-0">

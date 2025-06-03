@@ -3,7 +3,8 @@ import { HomePage } from "./pages/HomePage";
 import { ArtePage } from "./pages/ArtePage";
 import { DeportePage } from "./pages/DeportePage";
 import { PoliticaPage } from "./pages/PoliticaPage";
-import { MundoPage } from "./pages/MundoPage";
+import { EntretenimientoPage } from "./pages/EntretenimientoPage";
+import { ContactoPage } from "./pages/ContactoPage";
 
 
 export default function App() {
@@ -13,7 +14,8 @@ export default function App() {
       <Route path="arte" element={<ArtePage />} />
       <Route path="deporte" element={<DeportePage />} />
       <Route path="politica" element={<PoliticaPage />} />
-      <Route path="mundo" element={<MundoPage />} />
+      <Route path="entretenimiento" element={<EntretenimientoPage />} />
+      <Route path="contacto" element={<ContactoPage />} />
     </Routes>
   )
 }
