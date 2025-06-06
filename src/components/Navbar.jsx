@@ -49,14 +49,14 @@ export const Navbar = () => {
                         Último Minuto
                     </span>
                     <span className="text-gray-700 truncate max-w-xs sm:max-w-sm md:max-w-lg lg:max-w-xl">
-                        Se juega con público en el Mudomental de Ate
+                        Nuevo Aeropuerto Jorge Chávez opera con pista incompleta
                     </span>
                 </div>
             </div>
             {/* Logo */}
             <div className="bg-amber-400">
                 <a href="/">
-                    <img className="h-28 ml-4" src="img/upnlogo.png" alt="Logo de UPN" />
+                    <img className="h-28 ml-4" src="/img/upnlogo.png" alt="Logo de UPN" />
                 </a>
             </div>
             <nav className="bg-stone-900 shadow-lg">

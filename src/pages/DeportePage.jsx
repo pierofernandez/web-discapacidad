@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
 import { Paginator } from "../components/Paginator";
+import { Link } from "react-router-dom";
 
 export const DeportePage = () => {
 
@@ -39,40 +40,50 @@ export const DeportePage = () => {
                             title: "Christian Cueva \"llegó a un acuerdo\" para firmar por Emelec, según prensa argentina",
                             autor: "Renzo Castillo Lazo - 24 Mayo 2025",
                             descripcion: "Tras pasar por el fútbol del extranjero, en el 2024 el volante peruano Christian Cueva regresó al Perú para ponerse la camiseta de Cienciano en la Liga1 Te Apuesto.",
-                            img: "img/deportenum1.png",
+                            img: "/img/deportenum1.png",
+                            link: "/deporte/noticia1deporte",
                         },
                         {
                             title: "¿Diego Enríquez dejará Sporting Cristal? Club León, de la Liga MX, tiene en la mira al portero rimense",
                             autor: "Jean Dueñas - 24 Mayo 2025",
                             descripcion: "Desde que comenzó la temporada y a base de buenas actuaciones, Diego Enríquez se ha ido consolidando como uno de los mejores jugadores en Sporting Cristal.",
-                            img: "img/deportenum2.png",
+                            img: "/img/deportenum2.png",
+                            link: "/deporte/noticia2deporte",
                         },
                         {
                             title: "Ruidíaz con estilo: con un penal 'a lo Panenka', abrió el marcador para Atlético Grau ante Binacional [VIDEO]",
                             autor: "Renzo Castillo Lazo - 24 Mayo 2025",
                             descripcion: "El delantero Raúl Ruidíaz firmó el 1-0 de Atlético Grau con una soberbia definición en un tiro desde los doce pasos.",
-                            img: "img/deportenum3.png",
+                            img: "/img/deportenum3.png",
+                            link: "/deporte/noticia3deporte",
+
                         },
                         {
                             title: "Siete equipos en la pelea: ¿qué les queda por jugar a los clubes en el cierre del Torneo Apertura 2025?",
                             autor: "Diego Figueroa Loayza - 24 Mayo 2025",
                             descripcion: "Jean Dueñas Universitario y Alianza Lima comparten el liderato del Torneo Apertura, pero cinco equipos más le siguen muy cerca: Melgar, Sport Huancayo, Cusco FC Alianza Atlético y Cristal.",
-                            img: "img/deportenum4.png",
+                            img: "/img/deportenum4.png",
+                            link: "/deporte/noticia4deporte",
+
                         },
                         {
                             title: "¿Será en el Monumental? Conmebol inspeccionó el estadio de la 'U' de cara a la final de la Copa Libertadores",
                             autor: "Renzo Castillo Lazo - 24 Mayo 2025",
                             descripcion: "En Universitario, recibieron a la delegación de Conmebol para ser sede de la final de la Copa Libertadores 2025.",
-                            img: "img/deportenum5.png",
+                            img: "/img/deportenum5.png",
+                            link: "/deporte/noticia5deporte",
+
                         },
                         {
                             title: "Selección Peruana de Vóley: ¿en qué torneos competirá el equipo femenino en la temporada 2025?",
                             autor: "Diego Figueroa Loayza - 24 Mayo 2025",
                             descripcion: "Se avecina el periodo de selecciones en el calendario del vóley peruano, con la participación en dos mundiales para la temporada 2025.",
-                            img: "img/deportenum6.png",
+                            img: "/img/deportenum6.png",
+                            link: "/deporte/noticia6deporte",
+
                         },
                     ].map((item, idx) => (
-                        <div className="flex space-x-4 py-4" key={idx}>
+                        <Link to={item.link} key={idx} className="flex space-x-4 py-4 hover:bg-gray-100 rounded transition duration-300">
                             <img
                                 src={item.img}
                                 alt="Article"
@@ -83,7 +94,7 @@ export const DeportePage = () => {
                                 <p className="text-3xl font-medium text-gray-800 py-1">{item.title}</p>
                                 <p className="text-lg text-gray-600 py-1">{item.descripcion}</p>
                             </div>
-                        </div>
+                        </Link>
                     ))}
                 </div>
             </div>

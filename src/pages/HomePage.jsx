@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Footer } from "../components/Footer";
 import { Navbar } from "../components/Navbar";
 import { useEffect } from "react";
@@ -35,12 +36,14 @@ export const HomePage = () => {
 
                 {/* Contenido encima del fondo */}
                 <div className="relative z-10">
+                    import Link from 'next/link';
+
                     <div className="grid grid-cols-1 md:grid-cols-5 px-4 py-6 gap-4 w-full p-2 max-w-7xl mx-auto">
 
-                        {/* Imagen principal */}
-                        <div className="md:row-span-3 md:col-span-3 shadow-xs overflow-hidden h-72 md:h-auto relative">
+                        {/* Noticia principal - Política */}
+                        <Link href="/politica/noticia6politica" className="md:row-span-3 md:col-span-3 shadow-xs overflow-hidden h-72 md:h-auto relative group block">
                             <img
-                                src="img/papamain.png"
+                                src="/img/papamain.png"
                                 alt="Noticia principal"
                                 className="w-full h-auto object-cover"
                             />
@@ -50,21 +53,20 @@ export const HomePage = () => {
                             <div className="absolute inset-0 flex items-end">
                                 <div className="px-8 pb-6 max-w-lg">
                                     <h1 className="text-white text-2xl font-bold">
-                                        León XIV recordó su labor misionera en Perú durante audiencia ante la curia: “El pueblo peruano maduró mi vocación pastoral”
+                                        León XIV recordó su labor misionera en Perú...
                                     </h1>
                                     <div className="w-20 h-0.5 bg-red-400 mt-4 mb-2"></div>
                                     <p className="text-gray-200">
-                                        Otro de los mejores momentos de la transmisión fue cuando Gianni Infantino declaró que Cristiano Ronaldo podría formar parte del próximo Mundial de Clubes.
+                                        Otro de los mejores momentos de la transmisión fue...
                                     </p>
                                 </div>
                             </div>
-                        </div>
+                        </Link>
 
-
-                        {/* Solo se muestra en md+ */}
-                        <div className="md:row-span-1 md:col-start-4 shadow-xs overflow-hidden h-24 md:h-auto relative hidden md:block">
+                        {/* Noticia secundaria - Hollywood */}
+                        <Link href="/hollywood/noticia2hollywood" className="md:row-span-1 md:col-start-4 shadow-xs overflow-hidden h-24 md:h-auto relative hidden md:block">
                             <img
-                                src="img/freddymain.png"
+                                src="/img/freddymain.png"
                                 alt="Noticia deportiva"
                                 className="w-full h-full object-cover"
                             />
@@ -78,14 +80,16 @@ export const HomePage = () => {
                                     </h1>
                                     <div className="w-20 h-0.5 bg-red-400 mt-4 mb-2"></div>
                                     <p className="text-gray-200 text-sm">
-                                        Freddie Mercury murió en 1991 por una neumonía derivada del VIH.                                    </p>
+                                        Freddie Mercury murió en 1991...
+                                    </p>
                                 </div>
                             </div>
-                        </div>
+                        </Link>
 
-                        <div className="md:row-span-1 md:col-start-5 shadow-xs overflow-hidden h-24 md:h-auto relative hidden md:block">
+                        {/* Noticia secundaria - Deportes */}
+                        <Link href="/deportes/noticia3deportes" className="md:row-span-1 md:col-start-5 shadow-xs overflow-hidden h-24 md:h-auto relative hidden md:block">
                             <img
-                                src="img/lukamain.png"
+                                src="/img/lukamain.png"
                                 alt="Noticia política"
                                 className="w-full h-full object-cover"
                             />
@@ -95,20 +99,20 @@ export const HomePage = () => {
                             <div className="absolute inset-0 flex items-end">
                                 <div className="px-8 pb-6 max-w-lg">
                                     <h1 className="text-white text-base font-bold">
-                                        Quiero decir una frase que he visto y me gustó...
+                                        Quiero decir una frase que he visto...
                                     </h1>
                                     <div className="w-20 h-0.5 bg-red-400 mt-4 mb-2"></div>
                                     <p className="text-gray-200 text-sm">
-                                        El croata se despidió del Real Madrid en su último partido en el Bernabéu.
+                                        El croata se despidió del Real Madrid...
                                     </p>
                                 </div>
                             </div>
-                        </div>
+                        </Link>
 
-                        {/* Imagen inferior derecha (solo md+) */}
-                        <div className="hidden md:block md:row-span-1 md:row-start-3 md:col-span-2 md:col-start-4 shadow-xs overflow-hidden h-24 md:h-auto relative">
+                        {/* Noticia inferior derecha - Deportes */}
+                        <Link href="/deportes/noticia4deportes" className="hidden md:block md:row-span-1 md:row-start-3 md:col-span-2 md:col-start-4 shadow-xs overflow-hidden h-24 md:h-auto relative">
                             <img
-                                src="img/anchelottimain.png"
+                                src="/img/anchelottimain.png"
                                 alt="Noticia destacada"
                                 className="w-full h-full object-cover"
                             />
@@ -118,15 +122,17 @@ export const HomePage = () => {
                             <div className="absolute inset-0 flex items-end">
                                 <div className="px-8 pb-6 max-w-lg">
                                     <h1 className="text-white text-base font-bold">
-                                        Hasta las lágrimas: así fue la emotiva despedida de Carlo Ancelotti en el Bernabéu.
+                                        Hasta las lágrimas: así fue la emotiva despedida...
                                     </h1>
                                     <div className="w-20 h-0.5 bg-red-400 mt-4 mb-2"></div>
                                     <p className="text-gray-200 text-sm">
-                                        "Nuestra historia es inolvidable", dijo un emocionado Carlo Ancelotti, despidiéndose del Real Madrid para iniciar su etapa como seleccionador de Brasil.                                    </p>
+                                        "Nuestra historia es inolvidable", dijo un emocionado...
+                                    </p>
                                 </div>
                             </div>
-                        </div>
+                        </Link>
                     </div>
+
 
                     {/* Contenedor solo para mobile */}
                     <div className="flex gap-4 md:hidden px-4 -mt-2">

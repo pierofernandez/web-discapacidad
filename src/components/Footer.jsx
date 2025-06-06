@@ -12,22 +12,22 @@ export const Footer = () => {
                         <div className="flex space-x-6">
                             <a href="#" className="text-gray-400 hover:text-gray-500">
                                 <span className="sr-only">Facebook</span>
-                                <img src="img/Facebook.png" alt="facebook" />
+                                <img src="/img/Facebook.png" alt="facebook" />
                             </a>
 
                             <a href="#" className="text-gray-400 hover:text-gray-500">
                                 <span className="sr-only">Twitter</span>
-                                <img src="img/Twitter.png" alt="twitter" />
+                                <img src="/img/Twitter.png" alt="twitter" />
                             </a>
 
                              <a href="#" className="text-gray-400 hover:text-gray-500">
                                 <span className="sr-only">Instagram</span>
-                                <img src="img/Instagram.png" alt="instagram" />
+                                <img src="/img/Instagram.png" alt="instagram" />
                             </a>
 
                             <a href="#" className="text-gray-400 hover:text-gray-500">
                                 <span className="sr-only">YouTube</span>
-                                <img src="img/Youtube.png" alt="youtube" />
+                                <img src="/img/Youtube.png" alt="youtube" />
                             </a>
                         </div>
                     </div>
