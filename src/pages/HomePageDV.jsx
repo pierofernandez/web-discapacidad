@@ -5,66 +5,66 @@ export const HomePageDV = () => {
 
             {/* Fila 1 */}
             <div className="flex flex-row flex-wrap gap-6 w-full max-w-6xl justify-center">
-                <div className="relative w-[40%] h-45 rounded-2xl overflow-hidden shadow-lg">
+                <a href="/artedv" className="relative w-[35%] h-52 rounded-2xl overflow-hidden shadow-lg">
                     <img
                         src="/img/discapacidad/arte.png"
                         alt="Imagen 1"
                         className="w-full h-full object-cover"
                     />
-                    <span className="absolute bottom-4 left-4 text-white text-lg font-semibold bg-black bg-opacity-50 px-3 py-1 rounded">
+                    <span className="absolute bottom-4 left-4 text-white text-base font-semibold bg-black bg-opacity-50 px-3 py-1 rounded">
                         Arte
                     </span>
-                </div>
+                </a>
 
-                <div className="relative w-[40%] h-45 rounded-2xl overflow-hidden shadow-lg">
+                <a href="/deportedv" className="relative w-[35%] h-52 rounded-2xl overflow-hidden shadow-lg">
                     <img
                         src="/img/discapacidad/deporte.png"
                         alt="Imagen 2"
                         className="w-full h-full object-cover"
                     />
-                    <span className="absolute bottom-4 left-4 text-white text-lg font-semibold bg-black bg-opacity-50 px-3 py-1 rounded">
+                    <span className="absolute bottom-4 left-4 text-white text-base font-semibold bg-black bg-opacity-50 px-3 py-1 rounded">
                         Deporte
                     </span>
-                </div>
+                </a>
             </div>
 
             {/* Fila 2 */}
             <div className="flex flex-row flex-wrap gap-6 w-full max-w-6xl justify-center">
-                <div className="relative w-[40%] h-45 rounded-2xl overflow-hidden shadow-lg">
+                <a href="/politicadv" className="relative w-[35%] h-52 rounded-2xl overflow-hidden shadow-lg">
                     <img
                         src="/img/discapacidad/politica.png"
                         alt="Imagen 3"
                         className="w-full h-full object-cover"
                     />
-                    <span className="absolute bottom-4 left-4 text-white text-lg font-semibold bg-black bg-opacity-50 px-3 py-1 rounded">
+                    <span className="absolute bottom-4 left-4 text-white text-base font-semibold bg-black bg-opacity-50 px-3 py-1 rounded">
                         Política
                     </span>
-                </div>
+                </a>
 
-                <div className="relative w-[40%] h-45 rounded-2xl overflow-hidden shadow-lg">
+                <a href="/entretenimientodv" className="relative w-[35%] h-52 rounded-2xl overflow-hidden shadow-lg">
                     <img
                         src="/img/discapacidad/entretenimiento.png"
                         alt="Imagen 4"
                         className="w-full h-full object-cover"
                     />
-                    <span className="absolute bottom-4 left-4 text-white text-lg font-semibold bg-black bg-opacity-50 px-3 py-1 rounded">
+                    <span className="absolute bottom-4 left-4 text-white text-base font-semibold bg-black bg-opacity-50 px-3 py-1 rounded">
                         Entretenimiento
                     </span>
-                </div>
+                </a>
             </div>
 
             {/* Fila 3 (una imagen centrada) */}
             <div className="flex justify-center w-full">
-                <div className="relative w-[25%] h-45 rounded-2xl overflow-hidden shadow-lg">
+                <a href="/contactodv" className="relative w-[22%] h-52 rounded-2xl overflow-hidden shadow-lg">
                     <img
                         src="/img/discapacidad/contacto.png"
                         alt="Imagen 5"
                         className="w-full h-full object-cover"
                     />
-                    <span className="absolute bottom-4 left-4 text-white text-lg font-semibold bg-black bg-opacity-50 px-3 py-1 rounded">
+                    <span className="absolute bottom-4 left-4 text-white text-base font-semibold bg-black bg-opacity-50 px-3 py-1 rounded">
                         Contacto
                     </span>
-                </div>
+                </a>
             </div>
         </div>
     );

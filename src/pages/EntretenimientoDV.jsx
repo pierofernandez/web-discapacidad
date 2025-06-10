@@ -1,13 +1,21 @@
+import { AiOutlineLeft } from "react-icons/ai";
 import { Link } from "react-router-dom";
 
 export const EntretenimientoPageDV = () => {
-    (
+    return (
+
         <div className="w-full">
+            {/* Columna Derecha */}
+            <div className="bg-amber-400">
+                <a href="/homedv">
+                    <img className="h-28 ml-4" src="/img/upnlogo.png" alt="Logo de UPN" />
+                </a>
+            </div>
 
             <h1 className="font-bold text-red-500 text-2xl mx-auto max-w-7xl mt-14 px-4">Entretenimiento</h1>
             <hr className="max-w-7xl mx-auto border-t-2 border-red-500 my-4" />
 
-            {/* Columna Derecha */}
+
             <div className="container mx-auto grid grid-cols-1 max-w-7xl gap-6">
 
                 <div className="px-4">
@@ -70,8 +78,18 @@ export const EntretenimientoPageDV = () => {
                         </Link>
                     ))}
                 </div>
-            </div>
 
+                <div className="flex justify-start pb-6">
+                    <a
+                        href="/homedv"
+                        className="inline-flex items-center bg-red-500 text-white px-6 py-3 rounded-3xl hover:bg-red-600 transition duration-300"
+                    >
+                        <AiOutlineLeft className="mr-2" />
+                        Volver
+                    </a>
+                </div>
+            </div>
         </div>
-    );
-};
+
+    )
+}

@@ -85,7 +85,7 @@ export const ArtePageDV = () => {
 
                 <div className="flex justify-start pb-6">
                     <a
-                        href="/entretenimiento"
+                        href="/homedv"
                         className="inline-flex items-center bg-red-500 text-white px-6 py-3 rounded-3xl hover:bg-red-600 transition duration-300"
                     >
                         <AiOutlineLeft className="mr-2" />
