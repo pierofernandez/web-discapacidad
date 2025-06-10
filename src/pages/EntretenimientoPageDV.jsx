@@ -25,7 +25,7 @@ export const EntretenimientoPageDV = () => {
                             autor: "Renzo Alvarez - 24 Mayo 2025",
                             descripcion: "Otro de los mejores momentos de la transmisión fue cuando Gianni Infantino declaró que Cristiano Ronaldo podría formar parte del próximo Mundial de Clubes.",
                             img: "/img/entretenimientonum1.png",
-                            link: "/entretenimiento/noticia1entretenimiento",
+                            link: "/entretenimientodv/noticia1entretenimientodv",
 
                         },
                         {
@@ -33,35 +33,35 @@ export const EntretenimientoPageDV = () => {
                             autor: "Brenda García Retamal - 24 Mayo 2025",
                             descripcion: "La artista, que viajaba en un jet privado, fue reprendida por la tripulación. El episodio se suma a otros antecedentes de conducta imprudente en aviones.",
                             img: "/img/entretenimientonum2.png",
-                            link: "/entretenimiento/noticia2entretenimiento",
+                            link: "/entretenimientodv/noticia2entretenimientodv",
                         },
                         {
                             title: "Tom Cruise responde incómoda pregunta tras la decisión de su hija Suri de no llevar su apellido",
                             autor: "Renzo Alvarez - 21 Mayo 2025",
                             descripcion: "Suri, la hija menor del actor Tom Cruise, decidió prescindir del apellido de su padre en 2024 durante su ceremonia de graduación que celebró en Nueva York y a la que el artista no asistió.",
                             img: "/img/entretenimientonum3.png",
-                            link: "/entretenimiento/noticia3entretenimiento",
+                            link: "/entretenimientodv/noticia3entretenimientodv",
                         },
                         {
                             title: "Pamela López expone a Christian Cueva con chats íntimos tras el anuncio de su separación: \"Había caído muy bajo\"",
                             autor: "Renzo Alvarez - 23 Mayo 2025",
                             descripcion: "Una conversación del 2 de julio de 2024 revela que, pese al comunicado de Cueva sobre el fin de su matrimonio, él y López habrían tenido relaciones íntimas dos días antes, Contradice su versión.",
                             img: "/img/entretenimientonum4.png",
-                            link: "/entretenimiento/noticia4entretenimiento",
+                            link: "/entretenimientodv/noticia4entretenimientodv",
                         },
                         {
                             title: "'Lilo y Stitch': el live-action más humano (y entrañable) que ha hecho Disney en años [RESEÑA]",
                             autor: "Renzo Napa - 23 Mayo 2025",
                             descripcion: "Más de dos décadas de la película animada original, la versión live-action de Lilo y Stitch llega a los cines con una historia que, aunque actualizada, conserva el corazón de siempre.",
                             img: "/img/entretenimientonum5.png",
-                            link: "/entretenimiento/noticia5entretenimiento",
+                            link: "/entretenimientodv/noticia5entretenimientodv",
                         },
                         {
                             title: "'El juego del calamar 3' mostrará \"lo más bajo del ser humano\", adelanta el director Hwang Dong-hyuk",
                             autor: "Harold Quispe - 24 Mayo 2025",
                             descripcion: "\"La serie está llegando a su clímax\", sostuvo Hwang Dong-hyuk sobre la tercera temporada de 'El juego del calamar' que llegará a Netflix el próximo 27 de junio.",
                             img: "/img/entretenimientonum6.png",
-                            link: "/entretenimiento/noticia6entretenimiento",
+                            link: "/entretenimientodv/noticia6entretenimientodv",
                         },
                     ].map((item, idx) => (
                         <Link to={item.link} key={idx} className="flex space-x-4 py-4 hover:bg-gray-100 rounded transition duration-300">

@@ -25,14 +25,14 @@ export const ArtePageDV = () => {
                             autor: "Brenda García Retamal - 22 Mayo 2025",
                             descripcion: "Al tener el título de Miss Grand International, Jessica Newton explicó por qué Luciana Fuster no puede participar en otros certámenes de belleza.",
                             img: "/img/artenum1.png",
-                            link: "/arte/noticia1arte",
+                            link: "/artedv/noticia1artedv",
                         },
                         {
                             title: "Cannes 2025: Tatiana Calmell deslumbra en la alfombra roja con look de alta costura",
                             autor: "Brenda García Retamal - 23 Mayo 2025",
                             descripcion: "La peruana coronada como Miss Universo Américas 2024 desfiló en la alfombra roja con un diseño del filipino Michael Cinco, tras haber participado en su desfile en Francia.",
                             img: "/img/artenum2.png",
-                            link: "/arte/noticia2arte",
+                            link: "/artedv/noticia2artedv",
 
                         },
                         {
@@ -40,7 +40,7 @@ export const ArtePageDV = () => {
                             autor: "Redacción RPP - 23 Mayo 2025",
                             descripcion: "Este miércoles 28 de mayo a las 7:00 p. m., se presenta Nos pasa a todas, libro con historias reales de mujeres, en la Casa de la Literatura Peruana.",
                             img: "/img/artenum3.png",
-                            link: "/arte/noticia3arte",
+                            link: "/artedv/noticia3artedv",
 
                         },
                         {
@@ -48,7 +48,7 @@ export const ArtePageDV = () => {
                             autor: "Renzo Napa - 24 Mayo 2025",
                             descripcion: "La obra escrita y dirigida por K’intu Galiano y protagonizada por Vania Accinelli propone una mirada íntima y urgente sobre la salud mental, los vínculos maternos y el poder transformador del dolor.",
                             img: "/img/artenum4.png",
-                            link: "/arte/noticia4arte",
+                            link: "/artedv/noticia4artedv",
 
                         },
                         {
@@ -56,7 +56,7 @@ export const ArtePageDV = () => {
                             autor: "Andrea Susana Caceres Alvarez - 24 Mayo 2025",
                             descripcion: "El boom de la belleza en Perú viene acompañado de una oferta diversa y consumidores más exigentes. Expertos explicaron el crecimiento de este rubro en el mercado local.",
                             img: "/img/artenum5.png",
-                            link: "/arte/noticia5arte",
+                            link: "/artedv/noticia5artedv",
 
                         },
                         {
@@ -64,7 +64,7 @@ export const ArtePageDV = () => {
                             autor: "Brenda García Retamal - 24 Mayo 2025",
                             descripcion: "Kiara Escudero, modelo e influencer de 29 años, explicó que su decisión nace del respeto hacia sí misma y reafirma su compromiso con el sector salud.",
                             img: "/img/artenum6.png",
-                            link: "/arte/noticia6arte",
+                            link: "/artedv/noticia6artedv",
 
                         },
                     ].map((item, idx) => (

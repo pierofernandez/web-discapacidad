@@ -12,7 +12,7 @@ export const HomePageDV = () => {
                         className="w-full h-full object-cover"
                     />
                     <span className="absolute bottom-4 left-4 text-white text-base font-semibold bg-black bg-opacity-50 px-3 py-1 rounded">
-                        Arte
+                        Arte y Cultura
                     </span>
                 </a>
 

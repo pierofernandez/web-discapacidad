@@ -11,7 +11,7 @@ export const Noti2DeportePage = () => {
             <Navbar />
             {/* Columna Derecha */}
 
-            <h1 className="font-bold text-red-500 text-2xl mx-auto max-w-7xl mt-14 px-4">Arte y Cultura</h1>
+            <h1 className="font-bold text-red-500 text-2xl mx-auto max-w-7xl mt-14 px-4">Deporte</h1>
             <hr className="max-w-7xl mx-auto border-t-2 border-red-500 my-4" />
 
 

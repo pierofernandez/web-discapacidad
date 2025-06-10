@@ -25,7 +25,7 @@ export const PoliticaPageDV = () => {
                             autor: "Luis Felipe Rodriguez Jimenez - 24 Mayo 2025",
                             descripcion: "El ministro Jorge Montero propuso que el Gobierno facilite el diálogo para que pequeños mineros informales logren contratos de explotación con concesionarios.",
                             img: "img/politicanum1.png",
-                            link: "/politica/noticia1politica",
+                            link: "/politicadv/noticia1politicadv",
 
                         },
                         {
@@ -33,7 +33,7 @@ export const PoliticaPageDV = () => {
                             autor: "Agencia EFE - 24 Mayo 2025",
                             descripcion: "Dos menores siguen entre escombros, mientras siete fueron rescatados y trasladados al Hospital Nasser junto a familiares gravemente heridos.",
                             img: "img/politicanum2.png",
-                            link: "/politica/noticia2politica",
+                            link: "/politicadv/noticia2politicadv",
 
                         },
                         {
@@ -41,7 +41,7 @@ export const PoliticaPageDV = () => {
                             autor: "Wendy Milla Loo - 24 Mayo 2025",
                             descripcion: "La presidenta Dina Boluarte viajó hasta Quito y estuvo presente en la toma de mando para un segundo periodo de su homólogo ecuatoriano.",
                             img: "img/politicanum3.png",
-                            link: "/politica/noticia3politica",
+                            link: "/politicadv/noticia3politicadv",
 
                         },
                         {
@@ -49,7 +49,7 @@ export const PoliticaPageDV = () => {
                             autor: "France 24 - 24 Mayo 2024",
                             descripcion: "Mientras se prepara un intercambio de prisioneros masivo, Ucrania denunció un ataque ruso prolongado que causó incendios y daños en varios barrios de Kiev.",
                             img: "img/politicanum4.png",
-                            link: "/politica/noticia4politica",
+                            link: "/politicadv/noticia4politicadv",
 
                         },
                         {
@@ -57,7 +57,7 @@ export const PoliticaPageDV = () => {
                             autor: "Agencia EFE - 24 Mayo 2025",
                             descripcion: "El portavoz adjunto de la ONU destacó la importancia de proteger la libertad de pensamiento y expresión en las universidades.",
                             img: "img/politicanum5.png",
-                            link: "/politica/noticia5politica",
+                            link: "/politicadv/noticia5politicadv",
 
                         },
                         {
@@ -65,7 +65,7 @@ export const PoliticaPageDV = () => {
                             autor: "Agencia EFE - 24 Mayo 2025",
                             descripcion: "Según un comunicado del Ministerio de Defensa de Rusia en Telegram, a bordo del buque había cientos de contenedores con material militar, como drones y materiales de munición.",
                             img: "img/politicanum6.png",
-                            link: "/politica/noticia6politica",
+                            link: "/politicadv/noticia6politicadv",
 
                         },
                     ].map((item, idx) => (

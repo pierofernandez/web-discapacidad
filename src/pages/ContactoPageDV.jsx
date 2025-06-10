@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { Footer } from "../components/Footer";
 import { Navbar } from "../components/Navbar";
+import { AiOutlineLeft } from "react-icons/ai";
 
-export const ContactoPage = () => {
+export const ContactoPageDV = () => {
     const [texto, setTexto] = useState('');
     const [grabando, setGrabando] = useState(false);
     const [reconocimiento, setReconocimiento] = useState(null);
@@ -66,23 +67,24 @@ export const ContactoPage = () => {
     };
 
     return (
-        <>
-            <Navbar />
+        <div className="w-full">
+            <div className="bg-amber-400">
+                <a href="/homedv">
+                    <img className="h-28 ml-4" src="/img/upnlogo.png" alt="Logo de UPN" />
+                </a>
+            </div>
 
             <div className="px-6 py-24 sm:py-32 lg:px-8">
                 <div className="mx-auto max-w-2xl text-center">
-                    <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                    <h2 className="text-5xl font-bold tracking-tight text-gray-900 ">
                         Contáctanos
                     </h2>
-                    <p className="mt-2 text-lg leading-8 text-gray-600">
-                        Si deseas comunicarte con nosotros para cualquier consulta o comentario, puedes completar el siguiente formulario.
-                    </p>
                 </div>
 
                 <form className="mx-auto mt-16 max-w-xl sm:mt-20">
                     <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
                         <div className="sm:col-span-2">
-                            <label htmlFor="message" className="block text-sm leading-6 font-semibold text-gray-900">
+                            <label htmlFor="message" className="block text-3xl leading-6 font-semibold text-gray-900">
                                 Mensaje
                             </label>
                             <div className="mt-2.5">
@@ -91,7 +93,7 @@ export const ContactoPage = () => {
                                     value={texto}
                                     onChange={(e) => setTexto(e.target.value)}
                                     placeholder="Escribe algo o graba un mensaje..."
-                                    rows="6"
+                                    rows="8"
                                     className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                 />
                             </div>
@@ -102,7 +104,7 @@ export const ContactoPage = () => {
                         <button
                             type="button"
                             onClick={grabando ? handleStop : handleStart}
-                            className="flex-1 rounded-md bg-indigo-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-indigo-600"
+                            className="flex-1 rounded-md bg-indigo-600 px-4 py-3 text-xl font-semibold text-white shadow-sm hover:bg-indigo-500 focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-indigo-600"
                         >
                             {grabando ? 'Detener' : 'Grabar voz'}
                         </button>
@@ -111,21 +113,27 @@ export const ContactoPage = () => {
                             type="button"
                             onClick={handleEnviar}
                             disabled={!texto.trim()}
-                            className={`flex-1 rounded-md px-4 py-2.5 text-sm font-semibold shadow-sm ${texto.trim()
-                                    ? "bg-green-600 text-white hover:bg-green-500"
-                                    : "bg-gray-300 text-gray-500 cursor-not-allowed"
+                            className={`flex-1 rounded-md px-4 py-2.5 text-xl font-semibold shadow-sm ${texto.trim()
+                                ? "bg-green-600 text-white hover:bg-green-500"
+                                : "bg-gray-300 text-gray-500 cursor-not-allowed"
                                 }`}
                         >
                             Enviar mensaje
                         </button>
                     </div>
                 </form>
+
+            </div>
+            <div className="container mx-auto flex justify-start pb-6 pl-96">
+                <a
+                    href="/homedv"
+                    className="inline-flex items-center bg-red-500 text-white px-6 py-3 rounded-3xl hover:bg-red-600 transition duration-300"
+                >
+                    <AiOutlineLeft className="mr-2" />
+                    Volver
+                </a>
             </div>
 
-            <div className="w-full mt-10">
-                <img src="img/upn.png" alt="" className="w-full object-cover" />
-            </div>
-            <Footer />
-        </>
+        </div>
     );
 };

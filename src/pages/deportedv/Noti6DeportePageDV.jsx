@@ -1,15 +1,17 @@
-import { Navbar } from "../../components/Navbar";
-import { Footer } from "../../components/Footer";
 import { AiOutlineLeft } from "react-icons/ai";
 
-export const Noti5DeportePage = () => {
+export const Noti6DeportePageDV = () => {
 
 
     return (
 
         <div className="w-full">
-            <Navbar />
             {/* Columna Derecha */}
+            <div className="bg-amber-400">
+                <a href="/homedv">
+                    <img className="h-28 ml-4" src="/img/upnlogo.png" alt="Logo de UPN" />
+                </a>
+            </div>
 
             <h1 className="font-bold text-red-500 text-2xl mx-auto max-w-7xl mt-14 px-4">Deporte</h1>
             <hr className="max-w-7xl mx-auto border-t-2 border-red-500 my-4" />
@@ -34,7 +36,7 @@ export const Noti5DeportePage = () => {
                                 "Hace unos días, Fuster fue invitada en las actividades previas al Miss Universo, donde compartió momentos con las candidatas a la corona. Si bien su presencia fue motivo " +
                                 "de especulaciones sobre una posible participación en el certamen, esto no se dará, al menos por ahora. " +
                                 "La modelo se tomó fotos con los organizadores y todo el equipo, por lo que muchos interpretaron que tenía asegurada su candidatura. No obstante, solo se trató de un acompañamiento.",
-                            img: "/img/deportenum5.png",
+                            img: "/img/deportenum6.png",
                         },
                     ].map((item, idx) => (
                         <div className="flex flex-col space-y-4 py-4" key={idx}>
@@ -55,9 +57,9 @@ export const Noti5DeportePage = () => {
                     ))}
                 </div>
                 {/* Botón de Volver */}
-                <div className="flex justify-start">
+                <div className="flex justify-start pb-6">
                     <a
-                        href="/deporte"
+                        href="/deportedv"
                         className="inline-flex items-center bg-red-500 text-white px-6 py-3 rounded-3xl hover:bg-red-600 transition duration-300"
                     >
                         <AiOutlineLeft className="mr-2" />
@@ -65,11 +67,6 @@ export const Noti5DeportePage = () => {
                     </a>
                 </div>
             </div>
-
-            <div className="w-full mt-10">
-                <img src="img/upn.png" alt="" className="w-full object-cover" />
-            </div>
-            <Footer />
 
         </div>
 
