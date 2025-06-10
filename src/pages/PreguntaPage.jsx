@@ -2,38 +2,52 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export const PreguntaPage = () => {
-    const fullText = "¿ Tienes discapacidad visual?";
+    const questionText = "¿Tienes discapacidad visual?";
+    const fullSpeechText = `${questionText} Presiona la tecla F para sí y la tecla J para no.`;
+
     const [displayedText, setDisplayedText] = useState("");
     const navigate = useNavigate();
+
+    const getFemaleSpanishVoice = () => {
+        const voices = window.speechSynthesis.getVoices();
+        return voices.find(voice =>
+            voice.lang === "es-ES" && voice.name.toLowerCase().includes("female")
+        ) || voices.find(voice => voice.lang === "es-ES");
+    };
+
+    const speakWithVoice = (text) => {
+        const synth = window.speechSynthesis;
+        const utterance = new SpeechSynthesisUtterance(text);
+        const voice = getFemaleSpanishVoice();
+        if (voice) utterance.voice = voice;
+        utterance.lang = "es-ES";
+        synth.cancel();
+        synth.speak(utterance);
+    };
 
     useEffect(() => {
         let index = 0;
         const interval = setInterval(() => {
-            setDisplayedText((prev) => prev + fullText.charAt(index));
+            setDisplayedText(prev => prev + questionText.charAt(index));
             index++;
-            if (index >= fullText.length) clearInterval(interval);
+            if (index >= questionText.length) clearInterval(interval);
         }, 100);
         return () => clearInterval(interval);
     }, []);
 
     useEffect(() => {
-        const speak = () => {
-            const utterance = new SpeechSynthesisUtterance(
-                "¿Tienes discapacidad visual? Presiona la tecla F para sí y la tecla J para no."
-            );
-            utterance.lang = "es-ES";
-            speechSynthesis.cancel();
-            speechSynthesis.speak(utterance);
-        };
-
-        const timer = setTimeout(speak, 70);
+        const timer = setTimeout(() => {
+            if (window.speechSynthesis.getVoices().length === 0) {
+                window.speechSynthesis.onvoiceschanged = () => speakWithVoice(fullSpeechText);
+            } else {
+                speakWithVoice(fullSpeechText);
+            }
+        }, 100);
 
         const handleKeyDown = (event) => {
-            if (event.key.toLowerCase() === "f") {
-                navigate("/homedv");
-            } else if (event.key.toLowerCase() === "j") {
-                navigate("/home");
-            }
+            const key = event.key.toLowerCase();
+            if (key === "f") navigate("/homedv");
+            if (key === "j") navigate("/home");
         };
 
         window.addEventListener("keydown", handleKeyDown);
