@@ -36,7 +36,6 @@ export const HomePage = () => {
 
                 {/* Contenido encima del fondo */}
                 <div className="relative z-10">
-                    import Link from 'next/link';
 
                     <div className="grid grid-cols-1 md:grid-cols-5 px-4 py-6 gap-4 w-full p-2 max-w-7xl mx-auto">
 
@@ -53,11 +52,11 @@ export const HomePage = () => {
                             <div className="absolute inset-0 flex items-end">
                                 <div className="px-8 pb-6 max-w-lg">
                                     <h1 className="text-white text-2xl font-bold">
-                                        León XIV recordó su labor misionera en Perú...
+                                        León XIV recordó su labor misionera en Perú durante audiencia ante la curia: “El pueblo peruano maduró mi vocación pastoral”
                                     </h1>
                                     <div className="w-20 h-0.5 bg-red-400 mt-4 mb-2"></div>
                                     <p className="text-gray-200">
-                                        Otro de los mejores momentos de la transmisión fue...
+                                        Otro de los mejores momentos de la transmisión fue cuando Gianni Infantino declaró que Cristiano Ronaldo podría formar parte del próximo Mundial de Clubes.
                                     </p>
                                 </div>
                             </div>
@@ -80,7 +79,7 @@ export const HomePage = () => {
                                     </h1>
                                     <div className="w-20 h-0.5 bg-red-400 mt-4 mb-2"></div>
                                     <p className="text-gray-200 text-sm">
-                                        Freddie Mercury murió en 1991...
+                                        Freddie Mercury murió en 1991 por una neumonía derivada del VIH.
                                     </p>
                                 </div>
                             </div>
@@ -99,7 +98,7 @@ export const HomePage = () => {
                             <div className="absolute inset-0 flex items-end">
                                 <div className="px-8 pb-6 max-w-lg">
                                     <h1 className="text-white text-base font-bold">
-                                        Quiero decir una frase que he visto...
+                                        Quiero decir una frase que he visto y me gustó...
                                     </h1>
                                     <div className="w-20 h-0.5 bg-red-400 mt-4 mb-2"></div>
                                     <p className="text-gray-200 text-sm">

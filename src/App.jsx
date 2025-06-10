@@ -31,17 +31,29 @@ import { Noti5PoliticaPage } from "./pages/politica/Noti5PoliticaPage";
 import { Noti6PoliticaPage } from "./pages/politica/Noti6PoliticaPage";
 import { Noti7PoliticaPage } from "./pages/politica/Noti7PoliticaPage";
 import { Noti7EntretenimientoPage } from "./pages/entretenimiento/Noti7EntretenimientoPage";
+import { PreguntaPage } from "./pages/PreguntaPage";
+import { HomePageDV } from "./pages/HomePageDV";
+import { ArtePageDV } from "./pages/ArtePageDV";
+import { DeportePageDV } from "./pages/DeportePageDV";
+import { PoliticaPageDV } from "./pages/PoliticaPageDV";
+import { EntretenimientoPageDV } from "./pages/EntretenimientoDV";
 
 
 export default function App() {
   return (
     <Routes>
-      <Route path="/" element={<HomePage />} />
+      <Route path="home" element={<HomePage />} />
+      <Route path="homedv" element={<HomePageDV />} />
+      <Route path="artedv" element={<ArtePageDV/>}/>
       <Route path="arte" element={<ArtePage />} />
       <Route path="deporte" element={<DeportePage />} />
+      <Route path="deportedv" element={<DeportePageDV/>}/>
       <Route path="politica" element={<PoliticaPage />} />
+      <Route path="politicadv" element={<PoliticaPageDV/>}/>
+      <Route path="entretenimientodv" element={<EntretenimientoPageDV/>}/>
       <Route path="entretenimiento" element={<EntretenimientoPage />} />
       <Route path="contacto" element={<ContactoPage />} />
+      <Route path="/" element={<PreguntaPage />} />
       <Route path="/arte/noticia1arte" element={<Noti1ArtePage />} />
       <Route path="/arte/noticia2arte" element={<Noti2ArtePage />} />
       <Route path="/arte/noticia3arte" element={<Noti3ArtePage />} />
