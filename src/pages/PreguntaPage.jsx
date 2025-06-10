@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export const PreguntaPage = () => {
-    const questionText = "¿Tienes discapacidad visual?";
+    const questionText = "¿ Tienes discapacidad visual?";
     const fullSpeechText = `${questionText} Presiona la tecla F para sí y la tecla J para no.`;
 
     const [displayedText, setDisplayedText] = useState("");

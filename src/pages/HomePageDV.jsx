@@ -61,6 +61,9 @@ export const HomePageDV = () => {
             if (e.key.toLowerCase() === "j") {
                 const selectedCard = cards[focusedIndex];
                 const utterance = new SpeechSynthesisUtterance(`Has seleccionado: ${selectedCard.label}`);
+                const voice = getFemaleSpanishVoice(); // <- Aquí
+                if (voice) utterance.voice = voice;   // <- Y aquí
+                utterance.lang = "es-ES";              // Asegúrate también de definir el idioma
                 utterance.onend = () => {
                     window.location.href = selectedCard.href;
                 };
