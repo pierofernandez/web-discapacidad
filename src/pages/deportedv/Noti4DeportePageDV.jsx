@@ -23,8 +23,7 @@ export const Noti4DeportePageDV = () => {
     };
 
     useEffect(() => {
-
-        window.speechSynthesis.cancel(); //Detener cualquier audio anterior
+        window.speechSynthesis.cancel(); // Detener cualquier audio anterior
 
         if (!hasSpokenRef.current) {
             const leerTexto = `${contenido.title}. ${contenido.autor}. ${contenido.descripcion}. ${contenido.SubTitle}. ${contenido.descripcion2}`;
@@ -33,6 +32,17 @@ export const Noti4DeportePageDV = () => {
             window.speechSynthesis.speak(utterance);
             hasSpokenRef.current = true;
         }
+
+        // Escuchar tecla Espacio para volver
+        const handleKeyDown = (e) => {
+            if (e.code === "Space") {
+                e.preventDefault(); // Evita scroll si es necesario
+                window.location.href = "/deportedv";
+            }
+        };
+
+        window.addEventListener("keydown", handleKeyDown);
+        return () => window.removeEventListener("keydown", handleKeyDown);
     }, []);
 
     return (

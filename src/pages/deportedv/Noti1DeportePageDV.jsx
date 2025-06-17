@@ -11,7 +11,7 @@ export const Noti1DeportePageDV = () => {
             "El administrador de Cienciano, Sergio Ludeña, ofreció una conferencia de prensa en la que habló del caso Christian Cueva rumbo a Emelec." +
             "Cerca de volver al fútbol del exterior. Todo se perfila a que Christian Cueva, en el corto plazo, dejará la tienda de Cienciano para ponerse la camiseta de Emelec en la liga ecuatoriana de primera división." +
             "En relación a ello fue que se pronunció Sergio Ludeña, administrador de Cienciano. Este, en conferencia de prensa, indicó que Christian Cueva ha tomado la medida de salir, por lo que todo queda en la negociación para que su contrato en el 'Papá' termine antes de lo que se tiene estipulado." +
-            "\"Apostamos por Cueva en un momento en el que estaba alejado del fútbol. Tiene mucho para darle al país como jugador, y pese a que hicimos un esfuerzo económico para mejorar nuestra actual propuesta, tomó la decisión de no seguir con nosotros\", sostuvo en un primer momento." ,
+            "\"Apostamos por Cueva en un momento en el que estaba alejado del fútbol. Tiene mucho para darle al país como jugador, y pese a que hicimos un esfuerzo económico para mejorar nuestra actual propuesta, tomó la decisión de no seguir con nosotros\", sostuvo en un primer momento.",
         SubTitle: "¿Qué pasó entre Cueva, Cienciano y Emelec?",
         descripcion2:
             "Luego, indicó que -en un primer momento- no se dio un contacto directo de parte del cuadro 'eléctrico' que es parte de la Liga Pro de Ecuador." +
@@ -21,8 +21,7 @@ export const Noti1DeportePageDV = () => {
     };
 
     useEffect(() => {
-
-        window.speechSynthesis.cancel(); //Detener cualquier audio anterior
+        window.speechSynthesis.cancel(); // Detener cualquier audio anterior
 
         if (!hasSpokenRef.current) {
             const leerTexto = `${contenido.title}. ${contenido.autor}. ${contenido.descripcion}. ${contenido.SubTitle}. ${contenido.descripcion2}`;
@@ -31,6 +30,17 @@ export const Noti1DeportePageDV = () => {
             window.speechSynthesis.speak(utterance);
             hasSpokenRef.current = true;
         }
+
+        // Escuchar tecla Espacio para volver
+        const handleKeyDown = (e) => {
+            if (e.code === "Space") {
+                e.preventDefault(); // Evita scroll si es necesario
+                window.location.href = "/deportedv";
+            }
+        };
+
+        window.addEventListener("keydown", handleKeyDown);
+        return () => window.removeEventListener("keydown", handleKeyDown);
     }, []);
 
     return (

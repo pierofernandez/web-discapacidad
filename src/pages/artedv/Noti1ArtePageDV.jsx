@@ -23,8 +23,7 @@ export const Noti1ArtePageDV = () => {
     };
 
     useEffect(() => {
-
-        window.speechSynthesis.cancel(); //Detener cualquier audio anterior
+        window.speechSynthesis.cancel(); // Detener cualquier audio anterior
 
         if (!hasSpokenRef.current) {
             const leerTexto = `${contenido.title}. ${contenido.autor}. ${contenido.descripcion}. ${contenido.SubTitle}. ${contenido.descripcion2}`;
@@ -33,6 +32,17 @@ export const Noti1ArtePageDV = () => {
             window.speechSynthesis.speak(utterance);
             hasSpokenRef.current = true;
         }
+
+        // Escuchar tecla Espacio para volver
+        const handleKeyDown = (e) => {
+            if (e.code === "Space") {
+                e.preventDefault(); // Evita scroll si es necesario
+                window.location.href = "/artedv";
+            }
+        };
+
+        window.addEventListener("keydown", handleKeyDown);
+        return () => window.removeEventListener("keydown", handleKeyDown);
     }, []);
 
     return (
@@ -53,7 +63,7 @@ export const Noti1ArtePageDV = () => {
                         <img
                             src="/img/artenum1.png"
                             alt="Article"
-                            className="w-full h-85 object-cover "
+                            className="w-full h-85 object-cover"
                         />
                         <div>
                             <p className="text-xl text-gray-500 py-1">{contenido.autor}</p>

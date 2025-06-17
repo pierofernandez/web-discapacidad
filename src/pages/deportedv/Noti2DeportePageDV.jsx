@@ -11,7 +11,7 @@ export const Noti2DeportePageDV = () => {
             "Según pudo conocer RPP, el Club León de México sigue las buenas actuaciones de Diego Enríquez en Sporting Cristal." +
             "Desde que comenzó la temporada y a base de buenas actuaciones, Diego Enríquez se ha ido consolidando como uno de los mejores jugadores en Sporting Cristal." +
             "Pese al irregular momento de Sporting Cristal en el Torneo Apertura de la Liga1 Te Apuesto y la Copa Libertadores, el portero Diego Enríquez fue figura en más de un partido y ahora su nombre se ha vuelto muy atractivo para el mercado internacional, específicamente para el Club León." +
-            "RPP pudo conocer que el León, de la Liga MX, ha venido siguiendo las actuaciones de Enríquez en la tienda celeste y todos los informes recopilados han sido positivos. De hecho, el técnico del equipo, Eduardo Berizzo, también ha podido ver las actuaciones del arquero peruano de 23 años." ,
+            "RPP pudo conocer que el León, de la Liga MX, ha venido siguiendo las actuaciones de Enríquez en la tienda celeste y todos los informes recopilados han sido positivos. De hecho, el técnico del equipo, Eduardo Berizzo, también ha podido ver las actuaciones del arquero peruano de 23 años.",
         SubTitle: "Los números de Diego Enríquez, pretendido por León",
         descripcion2:
             "El guardameta también convocado a la Selección Peruana tiene contrato vigente con el club de La Florida hasta diciembre del 2027 y es para muchos el mejor arquero en lo que va del campeonato" +
@@ -21,8 +21,7 @@ export const Noti2DeportePageDV = () => {
     };
 
     useEffect(() => {
-
-        window.speechSynthesis.cancel(); //Detener cualquier audio anterior
+        window.speechSynthesis.cancel(); // Detener cualquier audio anterior
 
         if (!hasSpokenRef.current) {
             const leerTexto = `${contenido.title}. ${contenido.autor}. ${contenido.descripcion}. ${contenido.SubTitle}. ${contenido.descripcion2}`;
@@ -31,6 +30,17 @@ export const Noti2DeportePageDV = () => {
             window.speechSynthesis.speak(utterance);
             hasSpokenRef.current = true;
         }
+
+        // Escuchar tecla Espacio para volver
+        const handleKeyDown = (e) => {
+            if (e.code === "Space") {
+                e.preventDefault(); // Evita scroll si es necesario
+                window.location.href = "/deportedv";
+            }
+        };
+
+        window.addEventListener("keydown", handleKeyDown);
+        return () => window.removeEventListener("keydown", handleKeyDown);
     }, []);
 
     return (
