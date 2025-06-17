@@ -1,62 +1,67 @@
+import { useEffect, useRef } from "react";
 import { AiOutlineLeft } from "react-icons/ai";
 
 export const Noti5PoliticaPageDV = () => {
+    const hasSpokenRef = useRef(false);
 
+    const contenido = {
+        title: "Donald Trump asegura que Israel e Irán alcanzarán pronto la paz: \"Muchas llamadas y reuniones están teniendo lugar ahora\"",
+        autor: "Pedro Luis Ramos Martinez - 15 Junio 2025",
+        descripcion:
+            "El mandatario estadounidense utilizó sus redes sociales para afirmar que ambas naciones trabajan para llegar a consensos gracias a su intervención." +
+            "El presidente estadounidense, Donald Trump, aseguró este domingo que \"pronto habrá paz entre Israel e Irán\" gracias a las reuniones que se están dando en las últimas horas para llegar a un acuerdo. Esto luego de los ataques que se han dado entre ambas naciones desde el último jueves." +
+            "¡Pronto tendremos paz entre Israel e Irán! Muchas llamadas y reuniones están teniendo lugar ahora. Hago mucho y nunca me dan crédito por nada, pero está bien, la gente lo entiende. ¡Haz que el Medio Oriente sea grande otra vez!\", escribió el mandatario en su red personal Truth Social." +
+            "Trump recordó en su mensaje que, durante su primer mandato, países como Serbia y Kosovo también estaban en un conflicto bélico, pero con su intervención la situación se solucionó.  " +
+            "\"Serbia y Kosovo estaban en marcha, como lo han hecho durante décadas, y este conflicto de larga duración estaba a punto de estallar en la guerra. Lo detuve... Otro caso es el de Egipto y Etiopía, y su lucha por una enorme presa que está afectando al magnífico río Nilo. Hay paz, al menos por ahora, gracias a mi intervención, ¡y seguirá siendo así! Del mismo modo, ¡pronto habrá PAZ entre Israel e Irán!\", añadió." ,
+        SubTitle: "Gobierno peruano hace un llamado al diálogo",
+        descripcion2:
+            "Por su parte, el gobierno de Dina Boluarte, a través del Ministerio de Relaciones Exteriores, solicitó a Israel e Irán detener los bombardeos que se están dando entre ambas naciones y en su lugar iniciar las negociaciones de paz, apelando a los mecanismos establecidos en el derecho internacional." +
+            "La Cancillería advirtió que este enfrentamiento armado no solo afecta a la estabilidad en esa región del Medio Oriente, sino que pone en peligro también a “poblaciones ajenas a la zona de conflicto”, constituyendo “una seria amenaza a la paz y seguridad internacionales”. " +
+            "“El progreso del conflicto es un escenario indeseable que podría generar situaciones de incalculables y nefastas consecuencias”, señala el comunicado del Ministerio de Relaciones Exteriores. " ,
+    };
+
+    useEffect(() => {
+
+        window.speechSynthesis.cancel(); //Detener cualquier audio anterior
+
+        if (!hasSpokenRef.current) {
+            const leerTexto = `${contenido.title}. ${contenido.autor}. ${contenido.descripcion}. ${contenido.SubTitle}. ${contenido.descripcion2}`;
+            const utterance = new SpeechSynthesisUtterance(leerTexto);
+            utterance.lang = "es-ES";
+            window.speechSynthesis.speak(utterance);
+            hasSpokenRef.current = true;
+        }
+    }, []);
 
     return (
-
         <div className="w-full">
-            {/* Columna Derecha */}
             <div className="bg-amber-400">
                 <a href="/homedv">
                     <img className="h-28 ml-4" src="/img/upnlogo.png" alt="Logo de UPN" />
                 </a>
             </div>
 
-            <h1 className="font-bold text-red-500 text-2xl mx-auto max-w-7xl mt-14 px-4">Politica</h1>
+            <h1 className="font-bold text-red-500 text-2xl mx-auto max-w-7xl mt-14 px-4">Arte y Cultura</h1>
             <hr className="max-w-7xl mx-auto border-t-2 border-red-500 my-4" />
 
-
             <div className="container mx-auto grid grid-cols-1 max-w-7xl gap-6">
-
                 <div className="px-4">
-                    {[
-                        {
-                            title: "\"No es un tema de capricho, sino de reglas\": Jessica Newton descarta participación de Luciana Fuster en Miss Universo",
-                            autor: "Brenda García Retamal - 22 Mayo 2025",
-                            descripcion:
-                                "Al tener el título de Miss Grand International, Jessica Newton explicó por qué Luciana Fuster no puede participar en otros certámenes" +
-                                "de belleza.Pese al reciente acercamiento de Luciana Fuster a la organización del Miss Universo en El Salvador, se especuló que la modelo peruana " +
-                                "podría formar parte de este certamen internacional; sin embargo, Jessica Newton, directora del Miss Perú, descartó que pueda competir por la corona. " +
-                                "¿La razón? Actualmente, tiene el título de Miss Grand International y para que pueda participar en el concurso de belleza más importante, tendrá que terminar su mandato." +
-                                "Newton fue clara al respecto, ya que Luciana Fuster mostró su intención de participar en el Miss Universo, por ello, mencionó que si bien tiene las características y el perfil" +
-                                "para representar a Perú, no puede hacerlo como participante.",
-                            SubTitle: "Luciana Fuster en las previas del Miss Universo",
-                            descripcion2:
-                                "Hace unos días, Fuster fue invitada en las actividades previas al Miss Universo, donde compartió momentos con las candidatas a la corona. Si bien su presencia fue motivo " +
-                                "de especulaciones sobre una posible participación en el certamen, esto no se dará, al menos por ahora. " +
-                                "La modelo se tomó fotos con los organizadores y todo el equipo, por lo que muchos interpretaron que tenía asegurada su candidatura. No obstante, solo se trató de un acompañamiento.",
-                            img: "/img/politicanum5.png",
-                        },
-                    ].map((item, idx) => (
-                        <div className="flex flex-col space-y-4 py-4" key={idx}>
-                            <p className="text-5xl font-bold text-gray-800 py-1">{item.title}</p>
-                            <img
-                                src={item.img}
-                                alt="Article"
-                                className="w-full h-85 object-cover "
-                            />
-                            <div>
-                                <p className="text-xl text-gray-500 py-1">{item.autor}</p>
-                                <p className="text-2xl text-gray-600 py-1 text-justify leading-relaxed">{item.descripcion}</p>
-                                <p className="text-2xl text-gray-600 py-1 font-bold">{item.SubTitle}</p>
-                                <p className="text-2xl text-gray-600 py-1 text-justify leading-relaxed">{item.descripcion2}</p>
-                            </div>
+                    <div className="flex flex-col space-y-4 py-4">
+                        <p className="text-5xl font-bold text-gray-800 py-1">{contenido.title}</p>
+                        <img
+                            src="/img/politicanum5.png"
+                            alt="Article"
+                            className="w-full h-85 object-cover "
+                        />
+                        <div>
+                            <p className="text-xl text-gray-500 py-1">{contenido.autor}</p>
+                            <p className="text-2xl text-gray-600 py-1 text-justify leading-relaxed">{contenido.descripcion}</p>
+                            <p className="text-2xl text-gray-600 py-1 font-bold">{contenido.SubTitle}</p>
+                            <p className="text-2xl text-gray-600 py-1 text-justify leading-relaxed">{contenido.descripcion2}</p>
                         </div>
-
-                    ))}
+                    </div>
                 </div>
-                {/* Botón de Volver */}
+
                 <div className="flex justify-start pb-6">
                     <a
                         href="/politicadv"
@@ -67,8 +72,6 @@ export const Noti5PoliticaPageDV = () => {
                     </a>
                 </div>
             </div>
-
         </div>
-
-    )
+    );
 };

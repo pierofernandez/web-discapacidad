@@ -1,62 +1,71 @@
+import { useEffect, useRef } from "react";
 import { AiOutlineLeft } from "react-icons/ai";
 
 export const Noti6EntretenimientoPageDV = () => {
+    const hasSpokenRef = useRef(false);
 
+    const contenido = {
+        title: "'El juego del calamar 3' mostrará \"lo más bajo del ser humano\", adelanta el director Hwang Dong-hyuk",
+        autor: "Harold Quispe - 24 Mayo 2025",
+        descripcion:
+            "\"La serie está llegando a su clímax\", sostuvo Hwang Dong-hyuk sobre la tercera temporada de 'El juego del calamar' que llegará a Netflix el próximo 27 de junio." +
+            "El juego del calamar emitirá pronto su tercera —y última— temporada en Netflix para seguir rompiendo récords de audiencia con los 456 participantes quienes buscarán, una vez más, llevarse el premio de 45,6 millones de wones (38, 288 dólares) arriesgando sus vidas superando los más peligrosos juegos." +
+            "Ahora, el director Hwang Dong-hyuk habló con Entertainment Weekly sobre el enfoque que tendrá la tercera temporada de El juego del Calamar afirmando que buscará superar las visualizaciones conseguidas por la segunda parte de la serie en 92 países en todo el mundo. " +
+            "“En el caso de la tercera temporada, quise introducir juegos que realmente mostraran lo más bajo del ser humano, porque la serie está llegando a su clímax”, comenzó diciendo el director y guionista surcoreana de 53 años. En ese sentido, recalcó que su objetivo es que los participantes “saquen a flote las partes más oscuras de la naturaleza humana”." +
+            "Del mismo modo, mencionó que habrá un cambio en la lista de juegos para los capítulos finales de El juego del calamar a diferencia de su segunda temporada. “En la primera temporada utilizamos el juego de la cuerda para provocar miedo, algo que en la temporada dos no tuvimos (…) Por eso, en la tercera temporada, decidí introducir juegos que pudieran infundir terror en las personas con pura altura”, mencionó." +
+            "Por último, afirmó que tiene como objetivo resaltar “el sentido de humanidad” en las personas a través de las escenas en El juego del calamar. “Quise plantear cómo podemos conservar nuestro sentido de humanidad y cómo debemos seguir siendo humanos a pesar de esta competencia feroz. Trato de plantear eso como una pregunta final”, añadió.",
+        SubTitle: "¿Cuándo se estrenará la tercera temporada de El juego del calamar?",
+        descripcion2:
+            "La tercera —y última— temporada de El juego del calamar se estrenará en Netflix el 27 de junio de 2025 llegando a Estados Unidos y Latinoamérica con seis episodios finales.",
+        SubTitle2: "¿De qué trata la tercera temporada de El juego del calamar?",
+        descripcion3: "La serie seguirá nuevamente a Seong Gi-hun (Lee Jung-jae), un padre endeudado que, junto a otros 455 participantes, acepta competir en una serie de juegos infantiles con giros peligrosos que son observados por una secta secretada dirigida por Hwang In-ho (Lee Byung-Hun), 'El Líder'." + 
+        "\"Seong Gi-hun persiste en su objetivo de poner fin al juego, mientras que el Líder continúa con su siguiente movimiento y las decisiones de los jugadores supervivientes traerán consecuencias más graves con cada ronda. ¿Podemos tener esperanzas de humanidad en la más cruel de las realidades? Los fans de todo el mundo cuentan los días para que se revele la respuesta final\", se lee en la sinopsis oficial. "
+    };
+
+    useEffect(() => {
+
+        window.speechSynthesis.cancel(); //Detener cualquier audio anterior
+
+        if (!hasSpokenRef.current) {
+            const leerTexto = `${contenido.title}. ${contenido.autor}. ${contenido.descripcion}. ${contenido.SubTitle}. ${contenido.descripcion2}`;
+            const utterance = new SpeechSynthesisUtterance(leerTexto);
+            utterance.lang = "es-ES";
+            window.speechSynthesis.speak(utterance);
+            hasSpokenRef.current = true;
+        }
+    }, []);
 
     return (
-
         <div className="w-full">
-            {/* Columna Derecha */}
             <div className="bg-amber-400">
                 <a href="/homedv">
                     <img className="h-28 ml-4" src="/img/upnlogo.png" alt="Logo de UPN" />
                 </a>
             </div>
 
-            <h1 className="font-bold text-red-500 text-2xl mx-auto max-w-7xl mt-14 px-4">Entretenimiento</h1>
+            <h1 className="font-bold text-red-500 text-2xl mx-auto max-w-7xl mt-14 px-4">Arte y Cultura</h1>
             <hr className="max-w-7xl mx-auto border-t-2 border-red-500 my-4" />
 
-
             <div className="container mx-auto grid grid-cols-1 max-w-7xl gap-6">
-
                 <div className="px-4">
-                    {[
-                        {
-                            title: "\"No es un tema de capricho, sino de reglas\": Jessica Newton descarta participación de Luciana Fuster en Miss Universo",
-                            autor: "Brenda García Retamal - 22 Mayo 2025",
-                            descripcion:
-                                "Al tener el título de Miss Grand International, Jessica Newton explicó por qué Luciana Fuster no puede participar en otros certámenes" +
-                                "de belleza.Pese al reciente acercamiento de Luciana Fuster a la organización del Miss Universo en El Salvador, se especuló que la modelo peruana " +
-                                "podría formar parte de este certamen internacional; sin embargo, Jessica Newton, directora del Miss Perú, descartó que pueda competir por la corona. " +
-                                "¿La razón? Actualmente, tiene el título de Miss Grand International y para que pueda participar en el concurso de belleza más importante, tendrá que terminar su mandato." +
-                                "Newton fue clara al respecto, ya que Luciana Fuster mostró su intención de participar en el Miss Universo, por ello, mencionó que si bien tiene las características y el perfil" +
-                                "para representar a Perú, no puede hacerlo como participante.",
-                            SubTitle: "Luciana Fuster en las previas del Miss Universo",
-                            descripcion2:
-                                "Hace unos días, Fuster fue invitada en las actividades previas al Miss Universo, donde compartió momentos con las candidatas a la corona. Si bien su presencia fue motivo " +
-                                "de especulaciones sobre una posible participación en el certamen, esto no se dará, al menos por ahora. " +
-                                "La modelo se tomó fotos con los organizadores y todo el equipo, por lo que muchos interpretaron que tenía asegurada su candidatura. No obstante, solo se trató de un acompañamiento.",
-                            img: "/img/entretenimientonum6.png",
-                        },
-                    ].map((item, idx) => (
-                        <div className="flex flex-col space-y-4 py-4" key={idx}>
-                            <p className="text-5xl font-bold text-gray-800 py-1">{item.title}</p>
-                            <img
-                                src={item.img}
-                                alt="Article"
-                                className="w-full h-85 object-cover "
-                            />
-                            <div>
-                                <p className="text-xl text-gray-500 py-1">{item.autor}</p>
-                                <p className="text-2xl text-gray-600 py-1 text-justify leading-relaxed">{item.descripcion}</p>
-                                <p className="text-2xl text-gray-600 py-1 font-bold">{item.SubTitle}</p>
-                                <p className="text-2xl text-gray-600 py-1 text-justify leading-relaxed">{item.descripcion2}</p>
-                            </div>
+                    <div className="flex flex-col space-y-4 py-4">
+                        <p className="text-5xl font-bold text-gray-800 py-1">{contenido.title}</p>
+                        <img
+                            src="/img/entretenimientonum6.png"
+                            alt="Article"
+                            className="w-full h-85 object-cover "
+                        />
+                        <div>
+                            <p className="text-xl text-gray-500 py-1">{contenido.autor}</p>
+                            <p className="text-2xl text-gray-600 py-1 text-justify leading-relaxed">{contenido.descripcion}</p>
+                            <p className="text-2xl text-gray-600 py-1 font-bold">{contenido.SubTitle}</p>
+                            <p className="text-2xl text-gray-600 py-1 text-justify leading-relaxed">{contenido.descripcion2}</p>
+                            <p className="text-2xl text-gray-600 py-1 font-bold">{contenido.SubTitle2}</p>
+                            <p className="text-2xl text-gray-600 py-1 text-justify leading-relaxed">{contenido.descripcion3}</p>
                         </div>
-
-                    ))}
+                    </div>
                 </div>
-                {/* Botón de Volver */}
+
                 <div className="flex justify-start pb-6">
                     <a
                         href="/entretenimientodv"
@@ -67,8 +76,6 @@ export const Noti6EntretenimientoPageDV = () => {
                     </a>
                 </div>
             </div>
-
         </div>
-
-    )
+    );
 };

@@ -1,12 +1,41 @@
-import { useEffect, useState } from "react";
-import { Footer } from "../components/Footer";
-import { Navbar } from "../components/Navbar";
+import { useEffect, useState, useRef } from "react";
 import { AiOutlineLeft } from "react-icons/ai";
 
 export const ContactoPageDV = () => {
     const [texto, setTexto] = useState('');
     const [grabando, setGrabando] = useState(false);
     const [reconocimiento, setReconocimiento] = useState(null);
+    const hasSpokenRef = useRef(false); // <- para que solo hable una vez
+
+    useEffect(() => {
+        const speak = (msg) => {
+            const synth = window.speechSynthesis;
+            const utter = new SpeechSynthesisUtterance(msg);
+            utter.lang = "es-ES";
+            synth.speak(utter);
+        };
+
+        if (!hasSpokenRef.current) {
+            speak("Pulsa la tecla F para hablar, la tecla J para enviar el formulario, y la tecla Espacio para volver al Home.");
+            hasSpokenRef.current = true;
+        }
+
+        const handleKeyDown = (e) => {
+            if (e.key === "f" || e.key === "F") {
+                handleStart();
+            }
+            if (e.key === "j" || e.key === "J") {
+                handleEnviar();
+            }
+            if (e.key === " " || e.code === "Space") {
+                e.preventDefault();
+                window.location.href = "/homedv";
+            }
+        };
+
+        window.addEventListener("keydown", handleKeyDown);
+        return () => window.removeEventListener("keydown", handleKeyDown);
+    }, [texto, reconocimiento, grabando]);
 
     useEffect(() => {
         const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -14,7 +43,7 @@ export const ContactoPageDV = () => {
             const recognition = new SpeechRecognition();
             recognition.lang = 'es-ES';
             recognition.interimResults = true;
-            recognition.continuous = true; //  Grabación continua
+            recognition.continuous = true;
 
             recognition.onresult = (event) => {
                 const textoReconocido = Array.from(event.results)
@@ -24,12 +53,8 @@ export const ContactoPageDV = () => {
             };
 
             recognition.onend = () => {
-                if (grabando) {
-                    // Reiniciar grabación si aún no se ha detenido manualmente
-                    recognition.start();
-                } else {
-                    setGrabando(false);
-                }
+                if (grabando) recognition.start();
+                else setGrabando(false);
             };
 
             recognition.onerror = (event) => {
@@ -40,7 +65,7 @@ export const ContactoPageDV = () => {
         } else {
             console.error('Reconocimiento de voz no soportado en este navegador.');
         }
-    }, [grabando]);
+    }, []);
 
     const handleStart = () => {
         if (reconocimiento && !grabando) {
@@ -54,14 +79,12 @@ export const ContactoPageDV = () => {
     };
 
     const handleStop = () => {
-        if (reconocimiento) {
-            reconocimiento.stop();
-        }
+        if (reconocimiento) reconocimiento.stop();
         setGrabando(false);
     };
 
     const handleEnviar = () => {
-        console.log("Mensaje enviado:", texto);
+        if (!texto.trim()) return;
         alert("Mensaje enviado:\n" + texto);
         setTexto('');
     };
@@ -122,8 +145,8 @@ export const ContactoPageDV = () => {
                         </button>
                     </div>
                 </form>
-
             </div>
+
             <div className="container mx-auto flex justify-start pb-6 pl-96">
                 <a
                     href="/homedv"
@@ -133,7 +156,6 @@ export const ContactoPageDV = () => {
                     Volver
                 </a>
             </div>
-
         </div>
     );
 };

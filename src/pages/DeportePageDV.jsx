@@ -8,6 +8,7 @@ export const DeportePageDV = () => {
     const cardRefs = useRef([]);
     const mensajeLeido = useRef(false);
 
+    //funcion para obtener la voz femenina 
     const getFemaleSpanishVoice = () => {
         const voices = window.speechSynthesis.getVoices();
         return voices.find(voice =>
@@ -67,13 +68,15 @@ export const DeportePageDV = () => {
             const utterance = new SpeechSynthesisUtterance(text);
             const voice = getFemaleSpanishVoice();
             if (voice) utterance.voice = voice;
-            utterance.lang = "es-ES";
             synth.cancel();
             synth.speak(utterance);
         };
 
+        // A veces las voces aún no están cargadas al principio
         if (synth.getVoices().length === 0) {
-            window.speechSynthesis.onvoiceschanged = () => speakWithVoice();
+            window.speechSynthesis.onvoiceschanged = () => {
+                speakWithVoice();
+            };
         } else {
             speakWithVoice();
         }
@@ -102,10 +105,14 @@ export const DeportePageDV = () => {
                 speechSynthesis.cancel();
                 const mensaje = "Has seleccionado este artículo";
                 const utterance = new SpeechSynthesisUtterance(mensaje);
-                const voice = getFemaleSpanishVoice();
-                if (voice) utterance.voice = voice;
-                utterance.lang = "es-ES";
-                utterance.onend = () => navigate(noticias[selectedIndex].link);
+                const voice = getFemaleSpanishVoice(); // <- Aquí
+                if (voice) utterance.voice = voice;   // <- Y aquí
+                utterance.lang = "es-ES";              // Asegúrate también de definir el idioma
+
+                utterance.onend = () => {
+                    navigate(noticias[selectedIndex].link);
+                };
+
                 speechSynthesis.speak(utterance);
             } else if (e.code === "Space") {
                 e.preventDefault();
@@ -116,6 +123,7 @@ export const DeportePageDV = () => {
         window.addEventListener("keydown", handleKeyDown);
         return () => window.removeEventListener("keydown", handleKeyDown);
     }, [selectedIndex]);
+
 
     return (
         <div className="w-full">
